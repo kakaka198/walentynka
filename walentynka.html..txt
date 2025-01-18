@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zostaniesz moją Walentynką?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(to bottom, #ff99cc, #ff66b2);
+            color: white;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 500px;
+            margin: 100px auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px #ff0099;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .yes {
+            background-color: #ff4081;
+            color: white;
+        }
+
+        .no {
+            background-color: #ccc;
+            color: black;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        #response {
+            margin-top: 40px;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .image-container {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .image-container img {
+            max-width: 80%;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Zostaniesz moją Walentynką? 💖</h1>
+        <p>Ty dalej czekasz aż Ci odpisze? ✨</p>
+        <div class="buttons">
+            <button class="yes" onclick="showResponse(true)">Tak 🥰</button>
+            <button class="no" onclick="showResponse(false)">Nie 😢</button>
+        </div>
+        <div id="response"></div>
+        <div class="image-container" id="image-container">
+            <img id="response-image" src="" alt="Odpowiedź">
+        </div>
+    </div>
+
+    <script>
+        function showResponse(isYes) {
+            const responseText = document.getElementById('response');
+            const imageContainer = document.getElementById('image-container');
+            const responseImage = document.getElementById('response-image');
+            
+            if (isYes) {
+                responseText.textContent = "Dziękuję, Kocham Cię!!! ❤️";
+                responseImage.src = "https://i.imgur.com/A6J8WmA.png"; // Zdjęcie misia z kwiatami
+            } else {
+                responseText.textContent = "Szkoda, może następnym razem 😢";
+                responseImage.src = "https://i.imgur.com/ykbyQHZ.png"; // Smutny miś
+            }
+
+            imageContainer.style.display = "block";
+        }
+    </script>
+</body>
+</html>
